@@ -36,5 +36,9 @@ public class Patient implements Serializable {
     private String name;
     private LocalDate dateOfBirth;
     private Gender gender;
-    private long patients; // changed to number of patients for now,, could be changed to list of patients using TypeConverter
+    private String department;
+    /**
+     * 1-5 (1 is the highest priority)
+     **/
+    private int priority;
 }
