@@ -5,13 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import java.io.Serializable;
 
 /**
- * Doctor entity.
+ * Ward entity.
  * <p>
  * An entity in JPA represents a table stored in a database.
  * <p>
@@ -23,12 +21,11 @@ import java.io.Serializable;
 @NoArgsConstructor     // generates a constructor with no parameter
 @Entity                 // specifies that the class is an entity and is mapped to a database table
 @Table
-public class Doctor implements Serializable {
+public class Ward {
     @Id
-    @GeneratedValue
-    private Long id;
+    private int id;
     private String name;
-    private String specialization;
-    private String department;
-    private long patients; // changed to number of patients for now,, could be changed to list of patients using TypeConverter
+    private int capacity;
+    private String type; // ICU, normal
+    private int bedsCount;  // number of beds in the ward (occupied + available)
 }
